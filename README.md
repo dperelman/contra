@@ -42,6 +42,24 @@ operating-system of choice. But if you don't wanna contact us, here's
 some notes on how to do it, current at time of writing, but probably
 outdated by the time you read this.
 
+### Install Postgres
+
+For my OS I followed https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04.
+
+Then I had to also install `libpq-dev` for whatever reason. 
+
+I had to also do `sudo apt install gcc make` to get a C compiler and the `make` build tool. Apt is a package manager similar to brew.
+
+I had to run `sudo apt install g++` for a C++ compiler.
+
+```
+sudo apt install postgresql postgresql-contrib gcc make g++ yarn
+```
+
+
+
+
+
 ### Install rbenv to manage versions of ruby https://github.com/rbenv/rbenv
 
 ### `cd contra`
@@ -52,25 +70,11 @@ outdated by the time you read this.
 rbenv install $(cat .ruby-version)
 ```
 
-I had to also do `sudo apt install gcc make` to get a C compiler and the `make` build tool. Apt is a package manager similar to brew.
+
 
 ### `gem install bundler`
 
 ### `bundle install`
-
-I had to run `sudo apt install g++` for a C++ compiler.
-
-Then I errored out for lack of postgres, so I did a detour:
-
-### Install Postgres
-
-For my OS I followed https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04 , basically:
-
-```
-sudo apt install postgresql postgresql-contrib
-```
-
-Then I had to also install `libpq-dev` for whatever reason.
 
 ### Run `bin/rails server`
 
